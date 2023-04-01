@@ -9,7 +9,12 @@ function setupEntities() {
     xZero: 0,
     yZero: 0,
   });
-  const car = new Player(carTile, UNIT_SIZE, true);
+  const car = new Player(
+    "car",
+    carTile,
+    { width: UNIT_SIZE, height: UNIT_SIZE },
+    true
+  );
 
   car.addAnimation("static", [0], 0);
   car.setCurrentAnimation("static");

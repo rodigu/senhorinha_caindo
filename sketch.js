@@ -1,4 +1,4 @@
-const UNIT_SIZE = window.innerHeight / 10;
+let UNIT_SIZE = window.innerHeight / 10;
 const gameManager = new GameManager(UNIT_SIZE);
 
 function setup() {
