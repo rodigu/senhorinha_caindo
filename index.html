@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Senhora</title>
     <script src="lib/p5.min.js"></script>
+    <script src="lib/tileset.js"></script>
+    <script src="lib/entity.js"></script>
+    <script src="lib/player.js"></script>
+    <script src="lib/manager.js"></script>
+    <script src="setupEntities.js"></script>
     <script src="sketch.js"></script>
-    <script src="tileset.js"></script>
     <style>
       body {
         padding: 0;
@@ -16,6 +20,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
+      }
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
       }
     </style>
   </head>
