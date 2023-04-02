@@ -7,10 +7,11 @@ function setup() {
     canvasWidth = (2 * window.innerHeight) / 3;
   createCanvas(canvasWidth, window.innerHeight);
   noSmooth();
+  setupEntities();
 }
 
 function preload() {
-  setupEntities();
+  preloadEntities();
   gameManager.preload();
 }
 
