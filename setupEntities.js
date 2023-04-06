@@ -13,7 +13,7 @@ function preloadEntities() {
   const car = new Player(
     "car",
     carTile,
-    { width: UNIT_SIZE * 1.5, height: UNIT_SIZE * 1.5 },
+    { width: UNIT_SIZE * 2.5, height: UNIT_SIZE * 2.5 },
     true
   );
 
