@@ -19,5 +19,5 @@ function preload() {
 
 function draw() {
   background(10);
-  gameManager.drawEntities();
+  gameManager.draw();
 }

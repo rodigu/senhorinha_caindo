@@ -50,6 +50,8 @@ function preloadEntities() {
 }
 
 function setupEntities() {
+  gameManager.setPosition({ x: width / 2, y: height / 2 });
+
   const car = gameManager.entities.get("car");
   car.addAnimation("static", [0], 0);
   car.setCurrentAnimation("static");
@@ -57,7 +59,7 @@ function setupEntities() {
   const road0 = gameManager.entities.get("road0");
   road0.size = { width: width * 0.7, height: height };
   road0.rotation = PI / 2;
-  road0.setPosition({ x: width / 2, y: height / 2 });
+  road0.setPosition({ x: 0, y: 0 });
   road0.addAnimation("static", [0], 0);
   road0.setCurrentAnimation("static");
 
@@ -65,7 +67,7 @@ function setupEntities() {
   road1.size = { width: width * 0.7, height: height };
   road1.rotation = PI / 2;
   road1.setPosition({
-    x: width / 2,
+    x: 0,
     y: road0.position.y - road0.size.height,
   });
   road1.addAnimation("static", [0], 0);
