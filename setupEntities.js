@@ -13,7 +13,7 @@ function preloadEntities() {
   const car = new Player(
     "car",
     carTile,
-    { width: UNIT_SIZE * 2.5, height: UNIT_SIZE * 2.5 },
+    { width: UNIT_SIZE * 2, height: UNIT_SIZE * 2 },
     true
   );
 
@@ -64,7 +64,10 @@ function setupEntities() {
   const road1 = gameManager.entities.get("road1");
   road1.size = { width: width * 0.7, height: height };
   road1.rotation = PI / 2;
-  road1.setPosition({ x: width / 2, y: -road1.size.height / 2 });
+  road1.setPosition({
+    x: width / 2,
+    y: road0.position.y - road0.size.height,
+  });
   road1.addAnimation("static", [0], 0);
   road1.setCurrentAnimation("static");
 }
