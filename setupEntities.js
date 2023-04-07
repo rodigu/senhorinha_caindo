@@ -46,7 +46,38 @@ function preloadEntities() {
 
   gameManager.addEntity(road0, "road0");
   gameManager.addEntity(road1, "road1");
+  createHoles();
   gameManager.addEntity(car, "car");
+}
+
+function createHoles() {
+  const holeTile = new Tileset({
+    imageSource: "./assets/hole.png",
+    originalTileWidth: 200,
+    originalTileHeight: 200,
+    tilesetColumns: 1,
+    tilesetRows: 1,
+    canvasTileSize: UNIT_SIZE,
+    xZero: 0,
+    yZero: 0,
+  });
+  gameManager.addCategory("hole");
+
+  gameManager.HOLE_COUNT = 10;
+
+  for (let i = 0; i < gameManager.HOLE_COUNT; i++) {
+    const holeID = "hole" + i;
+    const newHole = new Hole(
+      holeID,
+      holeTile,
+      { width: -1000, height: -1000 },
+      true,
+      UNIT_SIZE / 6
+    );
+    gameManager.addEntity(newHole, holeID);
+    gameManager.addEntityToCategory("hole", holeID);
+    newHole.setPosition({ x: -width * 4, y: -height * 4 });
+  }
 }
 
 function setupEntities() {
@@ -72,4 +103,12 @@ function setupEntities() {
   });
   road1.addAnimation("static", [0], 0);
   road1.setCurrentAnimation("static");
+
+  for (let i = 0; i < gameManager.HOLE_COUNT; i++) {
+    const holeID = "hole" + i;
+    const hole = gameManager.entities.get(holeID);
+    hole.size = { width: UNIT_SIZE / 3, height: UNIT_SIZE / 3 };
+    hole.addAnimation("static", [0], 0);
+    hole.setCurrentAnimation("static");
+  }
 }
