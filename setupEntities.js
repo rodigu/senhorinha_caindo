@@ -17,6 +17,23 @@ function preloadEntities() {
     true
   );
 
+  const playerCollision = new Collisions(
+    car,
+    new Set(["hole"]),
+    new Set(["car"])
+  );
+  const playerCollider = new Collider(
+    "circle",
+    {
+      x: 0,
+      y: 0,
+      radius: car.size.width,
+    },
+    [{ x: 0, y: 0 }]
+  );
+  playerCollision.addCollider(playerCollider);
+  car.addCollision(playerCollision);
+
   const roadTile = new Tileset({
     imageSource: "./assets/toon_road.png",
     originalTileWidth: 2048,
@@ -74,6 +91,23 @@ function createHoles() {
       true,
       UNIT_SIZE / 6
     );
+    const holeCollision = new Collisions(
+      newHole,
+      new Set(["car"]),
+      new Set(["hole"])
+    );
+    const holeCollider = new Collider(
+      "circle",
+      {
+        x: 0,
+        y: 0,
+        radius: newHole.size.width,
+      },
+      [{ x: 0, y: 0 }]
+    );
+    holeCollision.addCollider(holeCollider);
+    newHole.addCollision(holeCollision);
+
     gameManager.addEntity(newHole, holeID);
     gameManager.addEntityToCategory("hole", holeID);
     newHole.setPosition({ x: -width * 4, y: -height * 4 });
