@@ -3,8 +3,8 @@ function preloadEntities() {
 
   const roadTile = new Tileset({
     imageSource: "./assets/toon_road.png",
-    originalTileWidth: 2048,
-    originalTileHeight: 1500,
+    originalTileWidth: 500,
+    originalTileHeight: 500,
     tilesetColumns: 1,
     tilesetRows: 1,
     canvasTileSize: UNIT_SIZE,

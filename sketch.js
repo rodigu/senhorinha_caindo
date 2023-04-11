@@ -10,6 +10,7 @@ function setup() {
   createCanvas(canvasWidth, window.innerHeight);
   noSmooth();
   setupEntities();
+  frameRate(60);
 }
 
 function preload() {
