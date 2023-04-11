@@ -1,36 +1,5 @@
 function preloadEntities() {
-  const carTile = new Tileset({
-    imageSource: "./assets/car.png",
-    originalTileWidth: 256,
-    originalTileHeight: 256,
-    tilesetColumns: 1,
-    tilesetRows: 1,
-    canvasTileSize: UNIT_SIZE,
-    xZero: 0,
-    yZero: 0,
-  });
-
-  const car = new Player("car", carTile, {
-    width: UNIT_SIZE * 2,
-    height: UNIT_SIZE * 2,
-  });
-
-  const playerCollision = new Collisions(
-    car,
-    new Set(["hole"]),
-    new Set(["car"])
-  );
-  const playerCollider = new Collider(
-    "circle",
-    {
-      x: 0,
-      y: 0,
-      radius: car.size.width,
-    },
-    [{ x: 0, y: 0 }]
-  );
-  playerCollision.addCollider(playerCollider);
-  car.addCollision(playerCollision);
+  const car = Player.createPlayer(gameManager);
 
   const roadTile = new Tileset({
     imageSource: "./assets/toon_road.png",
@@ -47,7 +16,6 @@ function preloadEntities() {
     "road0",
     roadTile,
     { width: 0, height: 0 },
-    true,
     UNIT_SIZE / 6
   );
 
@@ -55,7 +23,6 @@ function preloadEntities() {
     "road1",
     roadTile,
     { width: 0, height: 0 },
-    true,
     UNIT_SIZE / 6
   );
 
@@ -63,6 +30,14 @@ function preloadEntities() {
   gameManager.addEntity(road1, "road1");
   createHoles();
   gameManager.addEntity(car, "car");
+
+  gameManager.addState("reset", (m) => {
+    m.reset();
+    m.setCurrentState("game");
+  });
+  gameManager.addBehavior("resetting", (m) => {
+    // if (m.hasEvent(Player.Events.FALL)) m.setCurrentState("reset");
+  });
 }
 
 function createHoles() {
@@ -86,7 +61,6 @@ function createHoles() {
       holeID,
       holeTile,
       { width: -1000, height: -1000 },
-      true,
       UNIT_SIZE / 6
     );
     const holeCollision = new Collisions(

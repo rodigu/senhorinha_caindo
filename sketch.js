@@ -18,6 +18,6 @@ function preload() {
 }
 
 function draw() {
-  background(10);
+  background(0);
   gameManager.draw();
 }
