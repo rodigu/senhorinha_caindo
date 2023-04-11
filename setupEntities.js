@@ -10,12 +10,10 @@ function preloadEntities() {
     yZero: 0,
   });
 
-  const car = new Player(
-    "car",
-    carTile,
-    { width: UNIT_SIZE * 2, height: UNIT_SIZE * 2 },
-    true
-  );
+  const car = new Player("car", carTile, {
+    width: UNIT_SIZE * 2,
+    height: UNIT_SIZE * 2,
+  });
 
   const playerCollision = new Collisions(
     car,
