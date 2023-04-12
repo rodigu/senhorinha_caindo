@@ -15,6 +15,7 @@ function setup() {
 
 function preload() {
   preloadEntities();
+  nucleoStartup();
   gameManager.preload();
 }
 
