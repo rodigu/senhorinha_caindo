@@ -5,3 +5,4 @@ Sources:
 - https://opengameart.org/content/toon-road-texture
 - https://opengameart.org/content/car-sedan
 - https://opengameart.org/content/free-top-down-car-sprites-by-unlucky-studio
+- https://opengameart.org/content/heart-full-and-empty-for-health

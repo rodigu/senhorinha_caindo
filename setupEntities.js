@@ -90,8 +90,7 @@ function setupEntities() {
   gameManager.setPosition({ x: width / 2, y: height / 2 });
 
   const car = gameManager.entities.get("car");
-  car.addAnimation("static", [0], 0);
-  car.setCurrentAnimation("static");
+  car.setup();
 
   const road0 = gameManager.entities.get("road0");
   road0.size = { width: width * 0.7, height: height };
