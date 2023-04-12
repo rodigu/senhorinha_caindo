@@ -31,7 +31,7 @@ function nucleoStartup() {
 
   gameManager.addState("intro", (manager) => {
     background(0);
-    if (logoNucleo.color.a < 0) manager.setCurrentState("game");
+    if (logoNucleo.color.a < 0) manager.setCurrentState("menu");
     fadeOut.apply(logoNucleo);
     logoNucleo.setPosition({ x: width / 2, y: height / 2 });
     logoNucleo.draw();

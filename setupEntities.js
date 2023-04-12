@@ -29,7 +29,7 @@ function preloadEntities() {
   gameManager.addEntity(road0, "road0");
   gameManager.addEntity(road1, "road1");
   createHoles();
-  gameManager.addEntity(car, "car");
+  gameManager.addEntity(car, "car", 2);
 
   gameManager.addState("reset", (m) => {
     m.reset();

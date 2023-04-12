@@ -10,6 +10,7 @@ function setup() {
   createCanvas(canvasWidth, window.innerHeight);
   noSmooth();
   setupEntities();
+  setupMainMenu();
   frameRate(60);
 }
 
@@ -20,6 +21,5 @@ function preload() {
 }
 
 function draw() {
-  background(10);
   gameManager.draw();
 }
