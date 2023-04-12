@@ -7,7 +7,7 @@ function setup() {
   let canvasWidth = window.innerWidth;
   if (window.innerHeight < window.innerWidth)
     canvasWidth = (2 * window.innerHeight) / 3;
-  createCanvas(canvasWidth, window.innerHeight);
+  const c = createCanvas(canvasWidth, window.innerHeight);
   noSmooth();
   setupEntities();
   frameRate(60);
