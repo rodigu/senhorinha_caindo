@@ -73,7 +73,7 @@ function createHoles() {
       {
         x: 0,
         y: 0,
-        radius: newHole.size.width,
+        radius: 0,
       },
       [{ x: 0, y: 0 }]
     );
@@ -93,14 +93,14 @@ function setupEntities() {
   car.setup();
 
   const road0 = gameManager.entities.get("road0");
-  road0.size = { width: width * 0.7, height: height };
+  road0.size = { width: width * 0.9, height: height };
   road0.rotation = PI / 2;
   road0.setPosition({ x: 0, y: 0 });
   road0.addAnimation("static", [0], 0);
   road0.setCurrentAnimation("static");
 
   const road1 = gameManager.entities.get("road1");
-  road1.size = { width: width * 0.7, height: height };
+  road1.size = { width: width * 0.9, height: height };
   road1.rotation = PI / 2;
   road1.setPosition({
     x: 0,
