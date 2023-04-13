@@ -1,8 +1,10 @@
 function preloadEntities() {
+  gameManager.assetsConfig = loadJSON("./assets/configs.json");
+
   const car = Player.createPlayer(gameManager);
 
   const roadTile = new Tileset({
-    imageSource: "./assets/toon_road.png",
+    imageSource: "./assets/rua.png",
     originalTileWidth: 500,
     originalTileHeight: 500,
     tilesetColumns: 1,
@@ -42,7 +44,7 @@ function preloadEntities() {
 
 function createHoles() {
   const holeTile = new Tileset({
-    imageSource: "./assets/hole.png",
+    imageSource: "./assets/buraco.png",
     originalTileWidth: 200,
     originalTileHeight: 200,
     tilesetColumns: 1,

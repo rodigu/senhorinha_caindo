@@ -1,6 +1,6 @@
 function nucleoStartup() {
   const logoTile = new Tileset({
-    imageSource: "./assets/pug-dog-dancing.gif",
+    imageSource: "./assets/logoNTMTST.gif",
     originalTileWidth: 200,
     originalTileHeight: 186,
     tilesetColumns: 1,
