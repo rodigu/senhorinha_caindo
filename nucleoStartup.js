@@ -1,8 +1,8 @@
 function nucleoStartup() {
   const logoTile = new Tileset({
-    imageSource: "./assets/logoNTMTST.gif",
-    originalTileWidth: 200,
-    originalTileHeight: 186,
+    imageSource: gameManager.assetsConfig.logo.local,
+    originalTileWidth: gameManager.assetsConfig.logo.largura,
+    originalTileHeight: gameManager.assetsConfig.logo.altura,
     tilesetColumns: 1,
     tilesetRows: 1,
     canvasTileSize: UNIT_SIZE,

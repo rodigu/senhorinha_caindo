@@ -1,12 +1,10 @@
-function preloadEntities() {
-  gameManager.assetsConfig = loadJSON("./assets/configs.json");
-
+async function preloadEntities() {
   const car = Player.createPlayer(gameManager);
 
   const roadTile = new Tileset({
-    imageSource: "./assets/rua.png",
-    originalTileWidth: 500,
-    originalTileHeight: 500,
+    imageSource: gameManager.assetsConfig.rua.local,
+    originalTileWidth: gameManager.assetsConfig.rua.largura,
+    originalTileHeight: gameManager.assetsConfig.rua.altura,
     tilesetColumns: 1,
     tilesetRows: 1,
     canvasTileSize: UNIT_SIZE,
@@ -44,9 +42,9 @@ function preloadEntities() {
 
 function createHoles() {
   const holeTile = new Tileset({
-    imageSource: "./assets/buraco.png",
-    originalTileWidth: 200,
-    originalTileHeight: 200,
+    imageSource: gameManager.assetsConfig.buraco.local,
+    originalTileWidth: gameManager.assetsConfig.buraco.largura,
+    originalTileHeight: gameManager.assetsConfig.buraco.altura,
     tilesetColumns: 1,
     tilesetRows: 1,
     canvasTileSize: UNIT_SIZE,
