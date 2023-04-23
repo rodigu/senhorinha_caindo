@@ -11,8 +11,8 @@ function nucleoStartup() {
   });
 
   const logoNucleo = new Entity(`logo-nucleo`, logoTile, {
-    width: UNIT_SIZE,
-    height: UNIT_SIZE,
+    width: UNIT_SIZE * 2,
+    height: UNIT_SIZE * 2,
   });
 
   logoNucleo.addAnimation("static", [0], 0);

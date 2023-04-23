@@ -1,9 +1,9 @@
 function setAssetsConfig(manager) {
   manager.assetsConfig = {
     rua: {
-      local: "./assets/rua.png",
-      largura: 500,
-      altura: 500,
+      local: "./assets/terra02.png",
+      largura: 320,
+      altura: 320,
     },
     buraco: {
       local: "./assets/buraco.png",
@@ -21,9 +21,9 @@ function setAssetsConfig(manager) {
       altura: 100,
     },
     logo: {
-      local: "./assets/logoNTMTST.gif",
-      largura: 200,
-      altura: 186,
+      local: "./assets/logo2.png",
+      largura: 640,
+      altura: 640,
     },
   };
 }

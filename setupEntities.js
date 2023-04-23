@@ -16,14 +16,14 @@ async function preloadEntities() {
     "road0",
     roadTile,
     { width: 0, height: 0 },
-    UNIT_SIZE / 6
+    UNIT_SIZE / 8
   );
 
   const road1 = new Road(
     "road1",
     roadTile,
     { width: 0, height: 0 },
-    UNIT_SIZE / 6
+    UNIT_SIZE / 8
   );
 
   gameManager.addEntity(road0, "road0");
@@ -61,7 +61,7 @@ function createHoles() {
       holeID,
       holeTile,
       { width: -1000, height: -1000 },
-      UNIT_SIZE / 6
+      UNIT_SIZE / 8
     );
     const holeCollision = new Collisions(
       newHole,
@@ -93,15 +93,13 @@ function setupEntities() {
   car.setup();
 
   const road0 = gameManager.entities.get("road0");
-  road0.size = { width: width * 0.9, height: height };
-  road0.rotation = PI / 2;
+  road0.size = { width: width, height: height };
   road0.setPosition({ x: 0, y: 0 });
   road0.addAnimation("static", [0], 0);
   road0.setCurrentAnimation("static");
 
   const road1 = gameManager.entities.get("road1");
-  road1.size = { width: width * 0.9, height: height };
-  road1.rotation = PI / 2;
+  road1.size = { width: width, height: height };
   road1.setPosition({
     x: 0,
     y: road0.position.y - road0.size.height,
