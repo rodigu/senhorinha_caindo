@@ -41,49 +41,7 @@ async function preloadEntities() {
 }
 
 function createHoles() {
-  const holeTile = new Tileset({
-    imageSource: gameManager.assetsConfig.buraco.local,
-    originalTileWidth: gameManager.assetsConfig.buraco.largura,
-    originalTileHeight: gameManager.assetsConfig.buraco.altura,
-    tilesetColumns: 1,
-    tilesetRows: 1,
-    canvasTileSize: UNIT_SIZE,
-    xZero: 0,
-    yZero: 0,
-  });
-  gameManager.addCategory("hole");
-
-  gameManager.HOLE_COUNT = 10;
-
-  for (let i = 0; i < gameManager.HOLE_COUNT; i++) {
-    const holeID = "hole" + i;
-    const newHole = new Hole(
-      holeID,
-      holeTile,
-      { width: -1000, height: -1000 },
-      UNIT_SIZE / 8
-    );
-    const holeCollision = new Collisions(
-      newHole,
-      new Set(["car"]),
-      new Set(["hole"])
-    );
-    const holeCollider = new Collider(
-      "circle",
-      {
-        x: 0,
-        y: 0,
-        radius: 0,
-      },
-      [{ x: 0, y: 0 }]
-    );
-    holeCollision.addCollider(holeCollider);
-    newHole.addCollision(holeCollision);
-
-    gameManager.addEntity(newHole, holeID);
-    gameManager.addEntityToCategory("hole", holeID);
-    newHole.setPosition({ x: -width * 4, y: -height * 4 });
-  }
+  Hole.generateHoles(gameManager);
 }
 
 function setupEntities() {
@@ -107,11 +65,5 @@ function setupEntities() {
   road1.addAnimation("static", [0], 0);
   road1.setCurrentAnimation("static");
 
-  for (let i = 0; i < gameManager.HOLE_COUNT; i++) {
-    const holeID = "hole" + i;
-    const hole = gameManager.entities.get(holeID);
-    hole.size = { width: UNIT_SIZE / 3, height: UNIT_SIZE / 3 };
-    hole.addAnimation("static", [0], 0);
-    hole.setCurrentAnimation("static");
-  }
+  Hole.setupHoles(gameManager);
 }

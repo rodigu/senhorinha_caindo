@@ -6,9 +6,9 @@ function setAssetsConfig(manager) {
       altura: 320,
     },
     buraco: {
-      local: "./assets/buraco.png",
-      largura: 200,
-      altura: 200,
+      local: "./assets/buracos.png",
+      largura: 96,
+      altura: 96,
     },
     carro: {
       local: "./assets/carro.gif",
