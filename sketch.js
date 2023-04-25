@@ -13,12 +13,14 @@ function setup() {
   setupEntities();
   setupMainMenu();
   frameRate(60);
+  textFont(gameManager.font);
 }
 
 function preload() {
   preloadEntities();
   nucleoStartup();
   gameManager.preload();
+  gameManager.font = loadFont("./assets/VT323-Regular.ttf");
 }
 
 function draw() {
