@@ -56,7 +56,7 @@ function setupMainMenu() {
     fill(255);
     textSize(UNIT_SIZE * 0.5);
     text(
-      "Experimente o cotidiano de um entregador em sua moto tendo que fugir dos buracos de São Paulo.",
+      "Experimente o cotidiano de um entregador em sua moto tendo que fugir dos buracos de São Paulo. Desvie de 50 buracos para chegar no endereço da sua próxima entrega.",
       0,
       height / 2 - UNIT_SIZE * 2,
       width,
