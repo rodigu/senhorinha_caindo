@@ -11,10 +11,11 @@ function nucleoStartup() {
   });
 
   const logoNucleo = new Entity(`logo-nucleo`, logoTile, {
-    width: UNIT_SIZE,
-    height: UNIT_SIZE,
+    width: UNIT_SIZE * 2,
+    height: UNIT_SIZE * 2,
   });
 
+  logoNucleo.sfx = loadSound("assets/audio/bgm_vinheta.wav");
   logoNucleo.addAnimation("static", [0], 0);
   logoNucleo.setCurrentAnimation("static");
 
@@ -24,13 +25,14 @@ function nucleoStartup() {
     Animate.changeColors,
     {
       func: Animate.linear,
-      funcArgs: { a: -5, b: 250 },
+      funcArgs: { a: -2, b: 250 },
     },
     ["a"]
   );
 
   gameManager.addState("intro", (manager) => {
     background(0);
+    if (!logoNucleo.sfx.isPlaying()) logoNucleo.sfx.play();
     if (logoNucleo.color.a < 0) manager.setCurrentState("menu");
     fadeOut.apply(logoNucleo);
     logoNucleo.setPosition({ x: width / 2, y: height / 2 });
