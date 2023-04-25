@@ -30,26 +30,23 @@ function setupMainMenu() {
     push();
     textAlign(CENTER, CENTER);
     fill(255);
-    textSize(UNIT_SIZE * 0.3);
-    text("Tu caiu no buraco,", width / 2, height / 2 - UNIT_SIZE * 1.5);
-    text("tal qual milhares de outros", width / 2, height / 2 - UNIT_SIZE);
+    textSize(UNIT_SIZE * 0.5);
     text(
-      "trabalhadores em São Paulo.",
-      width / 2,
-      height / 2 - UNIT_SIZE * 0.5
+      "Tu caiu no buraco, tal qual milhares de outros trabalhadores em São Paulo.",
+      0,
+      height / 2 - UNIT_SIZE,
+      width,
+      UNIT_SIZE * 3
     );
 
-    text("Mas não se preocupe,", width / 2, height / 2 + UNIT_SIZE * 0.5);
     text(
-      "o prefeito anunciou que vai tirar",
-      width / 2,
-      height / 2 + UNIT_SIZE
+      "Mas não se preocupe, o prefeito anunciou que vai tirar dinheiro da moradia pra tapar buraco.",
+      0,
+      height / 2 + UNIT_SIZE,
+      width,
+      UNIT_SIZE * 3
     );
-    text(
-      "dinheiro da moradia pra tapar buraco.",
-      width / 2,
-      height / 2 + UNIT_SIZE * 1.5
-    );
+
     pop();
     if (mouseIsPressed) {
       manager.reset();
