@@ -5,7 +5,7 @@ function setupMainMenu() {
     textAlign(CENTER, CENTER);
     fill(255);
     textSize(UNIT_SIZE * 0.7);
-    text("SUPER MOTOCA RACER 2023", width / 2, height / 2 - UNIT_SIZE * 0.7);
+    text("SAINDO DO BURACO", width / 2, height / 2 - UNIT_SIZE * 0.7);
     textSize(UNIT_SIZE / 3);
     text("toque/clique para jogar!", width / 2, height / 2 + UNIT_SIZE * 2);
     pop();
