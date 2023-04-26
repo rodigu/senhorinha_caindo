@@ -32,7 +32,8 @@ function nucleoStartup() {
 
   gameManager.addState("intro", (manager) => {
     background(0);
-    if (!logoNucleo.sfx.isPlaying()) logoNucleo.sfx.play();
+    while (!logoNucleo.sfx.isLoaded()) {}
+    // if (!logoNucleo.sfx.isPlaying() && frameCount < 30) logoNucleo.sfx.play();
     if (logoNucleo.color.a < 0) manager.setCurrentState("menu");
     fadeOut.apply(logoNucleo);
     logoNucleo.setPosition({ x: width / 2, y: height / 2 });
