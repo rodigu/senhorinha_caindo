@@ -6,19 +6,19 @@ function setAssetsConfig(manager) {
       altura: 320,
     },
     buraco: {
-      local: "./assets/buracos.png",
+      local: "./assets/buracos2.png",
       largura: 96,
       altura: 96,
     },
     carro: {
-      local: "./assets/carro.gif",
-      largura: 200,
-      altura: 186,
+      local: "./assets/motoca.png",
+      largura: 32,
+      altura: 64,
     },
     coracao: {
-      local: "./assets/coracao.png",
-      largura: 200,
-      altura: 100,
+      local: "./assets/capacete.png",
+      largura: 128,
+      altura: 64,
     },
     logo: {
       local: "./assets/logo2.png",
