@@ -26,8 +26,16 @@ async function preloadEntities() {
     UNIT_SIZE / 8
   );
 
+  const road2 = new Road(
+    "road2",
+    roadTile,
+    { width: 0, height: 0 },
+    UNIT_SIZE / 8
+  );
+
   gameManager.addEntity(road0, "road0");
   gameManager.addEntity(road1, "road1");
+  gameManager.addEntity(road2, "road2");
   createHoles();
   gameManager.addEntity(car, "car", 2);
 
@@ -64,6 +72,21 @@ function setupEntities() {
   });
   road1.addAnimation("static", [0], 0);
   road1.setCurrentAnimation("static");
+
+  const road2 = gameManager.entities.get("road2");
+  road2.size = { width: width, height: height };
+  road2.setPosition({
+    x: 0,
+    y: road1.position.y - road1.size.height,
+  });
+  road2.addAnimation("static", [0], 0);
+  road2.setCurrentAnimation("static");
+
+  road1.roadBellow = road0;
+
+  road2.roadBellow = road1;
+
+  road0.roadBellow = road2;
 
   Hole.setupHoles(gameManager);
 }
